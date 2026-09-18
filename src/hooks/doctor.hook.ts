@@ -39,12 +39,7 @@ export function useSuspenseGetAllDoctors(params: DoctorParams) {
 }
 
 export function useApproveDoctor(params: DoctorParams) {
-  const queryClient = useQueryClient();
-
   return useMutation({
     mutationFn: approveDoctor,
-    onSuccess: () => {
-      queryClient.removeQueries({ queryKey: ["doctors", params] });
-    },
   });
 }

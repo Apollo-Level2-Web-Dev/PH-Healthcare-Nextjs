@@ -48,17 +48,12 @@ export default function DoctorApprovalTable({
               </TableCell>
               <TableCell>{doctor.specialization}</TableCell>
               <TableCell className="text-right">
-                {doctor.user.emailVerified ? (
-                  <Button
-                    variant="outline"
-                    onClick={() => handleReview(doctor.id)}
-                    disabled={doctor.verificationStatus !== "PENDING"}
-                  >
-                    Review
-                  </Button>
-                ) : (
-                  <span className="py-4 text-red-500">Not verified</span>
-                )}
+                <Button
+                  variant="outline"
+                  onClick={() => handleReview(doctor.id)}
+                >
+                  Review
+                </Button>
               </TableCell>
             </TableRow>
           ))}
